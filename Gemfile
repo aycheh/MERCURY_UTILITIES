@@ -5,3 +5,6 @@ gem "sinatra"
 gem "haml"
 gem "kona_aes"
 gem "shotgun"
+gem "rspec"
+gem "cucumber"
+

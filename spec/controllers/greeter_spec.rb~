@@ -1,0 +1,42 @@
+require './model/test_decrypt_and_encrypt.rb'
+#require "./app.rb"
+
+
+class RSpecGreeter
+  def greet
+    "Hello RSpec!"
+  end
+end
+
+
+
+
+  describe "RSpec Greeter" do
+      it "should say 'Hello RSpec!' when it receives the greet() message" do
+      greeter = RSpecGreeter.new
+      greeting = greeter.greet
+      greeting.should == "Hello RSpec!"
+      end
+  end
+
+
+
+
+#describe PagesController do
+#  render_views
+
+#  before(:each) do
+#    @base_title = "Ruby On Rails tutorial micropost_app"
+#  end
+
+#  describe "GET '/index'" do
+#    render_views
+#    it "returns http success" do
+#      get '/index'
+#      response.should be_success
+#    end
+# end
+  
+#  get "/" do
+#    erb :index
+#  end

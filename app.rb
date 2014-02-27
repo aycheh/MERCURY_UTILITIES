@@ -19,15 +19,16 @@ require './model/test_decrypt_and_encrypt.rb'
   end
 
   post '/encrypt_result' do
+    encrypt_result = EncryptDecrypt.new
     decryption_tag = params['decryption_tag']
-    @encrypt_result = encrypt_1(decryption_tag)
-#    return ( encrypt_result)
-   erb:encrypt_result
+    @encrypt_result = encrypt_result.encrypt_1(decryption_tag)
+      erb:encrypt_result
   end
  
   post '/decrypt_result' do
-  encryption_tag = params['encryption_tag']
-      @decrypt_result = decrypt_1(encryption_tag)
+    decrypt_result = EncryptDecrypt.new
+    encryption_tag = params['encryption_tag']
+      @decrypt_result = decrypt_result.decrypt_1(encryption_tag)
           erb:decrypt_result
   end
 
