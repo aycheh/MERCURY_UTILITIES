@@ -1,6 +1,6 @@
 #set :haml, :format =&gt; :html5
 require './model/test_decrypt_and_encrypt.rb'
-
+require './model/convert_Adtech_tag_into_Adtech_script_tag.rb'
  
  
  
@@ -32,7 +32,27 @@ require './model/test_decrypt_and_encrypt.rb'
           erb:decrypt_result
   end
 
+  
+   get '/convert_adtech_tag' do
+    erb:convert_adtech_tag
+  end
+  
+  
+
+post '/convert_result' do
+    @ad_ids = params['AD_IDs']
+    p @ad_ids
+      @convert_result = get_script_tag(@ad_ids)
+          erb:convert_result
+end
 
 
+# how to download -> http://alfuken.tumblr.com/post/874428235/upload-and-download-files-in-sinatra
+get '/download/:script_list' do |filename|
+  send_file "./#{script_list}", :filename => filename, :type => 'Application/octet-stream'
+end
 
 
+#get '/download/:filename' do |filename|
+#  send_file "./files/#{filename}", :filename => filename, :type => 'Application/octet-stream'
+#end
