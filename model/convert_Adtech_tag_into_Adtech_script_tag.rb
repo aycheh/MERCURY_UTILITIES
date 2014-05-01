@@ -48,7 +48,7 @@ end
 def get_script_tag(ad_ids)
 #  p @ad_ids
    con = DataAccess.new(@ad_ids)
-   @file_to_print = File.new("script_list", "w")  
+   @file_to_print = File.new("script_list.txt", "w")  
    con.get_adtech_thrp_tag().each_hash do |tag|
      script_tag = create_script_tag(tag['property_value'])
      write_to_file(script_tag + "\n\n")
