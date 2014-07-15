@@ -42,7 +42,6 @@ end
 
 post '/convert_result' do
     @ad_ids = params['AD_IDs']
-    p @ad_ids
       @convert_result = get_script_tag(@ad_ids)
           erb:convert_result
 end
